@@ -1,0 +1,14 @@
+##### Configurations ####
+
+gpu: '0' # GPUs to use as '0,1,...'
+cv: 10 # number of cross validation runs
+model: Rocket_Ridge_AP_tf # Model to use {Rocket_Ridge_AP, Rocket_Ridge, Rocket_Ridge_tf, Rocket_Ridge_AP_tf}
+    # suffix _tf indicates both time and frequency domain feature extraction
+    # suffix _AP indicates distributed voting scheme is used to combine data rather than a contralized model approach
+dataset: hm # dataset name {hm,widar}
+access_points: [0,1,2,3,4] # access points to use, leave default to include all
+train_per: 0.8 # percent of training samples
+test_per: 0.2 # percent of testing samples
+n_kernels: 5000 # number of kernels to use in MiniRocket (for each of the model's paths)
+    # if using _tf model set to 5000, otherwise use 10000 kernels
+time_features: True # in the case of only time or frequency extraction, set to True for time and False for frequency
